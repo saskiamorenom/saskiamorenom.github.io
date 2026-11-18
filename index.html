@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vender sin Humo · Saskia Moreno</title>
+<meta name="description" content="Saskia Moreno, vendedora en Amazon.es con marcas propias. Te ayudo con tarifas, packaging, PPC, márgenes y proveedores. Con números reales. Sin humo.">
+<meta property="og:title" content="Vender sin Humo · Saskia Moreno">
+<meta property="og:description" content="Vende en Amazon con números reales. Sin humo.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E0F13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E0F13; --bg-2:#15171D; --line:#262932;
+    --text:#F0EEE8; --muted:#A3A19B;
+    --gold:#F5B800; --green:#34C77D; --red:#EB4D4B;
+    --radius:14px; --max:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  section{padding:88px 0;border-top:1px solid var(--line)}
+  .eyebrow{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+  h1,h2,h3{line-height:1.08;letter-spacing:-.025em}
+  h1{font-size:clamp(40px,8vw,76px);font-weight:900}
+  h2{font-size:clamp(30px,5vw,46px);font-weight:900;margin-bottom:20px}
+  h3{font-size:20px;font-weight:800;margin-bottom:8px}
+  p{color:var(--muted)}
+  p strong{color:var(--text);font-weight:600}
+  .gold{color:var(--gold)}
+
+  /* Botones */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-gold{background:var(--gold);color:#0E0F13}
+  .btn-gold:hover{background:#FFC61A}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
+  .btn-ghost:hover{border-color:var(--muted)}
+  .btn-wa{background:var(--green);color:#0E0F13}
+  .btn svg{width:20px;height:20px;flex:none}
+
+  /* Cabecera */
+  header{position:sticky;top:0;z-index:10;background:rgba(14,15,19,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:900;font-size:19px;letter-spacing:-.03em;text-decoration:none}
+  .logo span{color:var(--gold)}
+  .nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+  .nav ul a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
+  .nav ul a:hover{color:var(--text)}
+  .nav .btn{min-height:40px;padding:0 18px;font-size:14px;color:#0E0F13}
+  .nav .btn:hover{color:#0E0F13}
+  @media (max-width:760px){.nav ul li:not(:last-child){display:none}}
+
+  /* Portada */
+  .hero{padding:72px 0 88px;border-top:0}
+  .hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+  .hero h1 .dot{color:var(--gold)}
+  .hero .lead{font-size:19px;margin:24px 0 34px;max-width:34em}
+  .actions{display:flex;flex-wrap:wrap;gap:12px}
+  .ticket{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px;font-variant-numeric:tabular-nums}
+  .ticket .t-head{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:18px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+  .row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line);font-size:16px}
+  .row span:first-child{color:var(--muted)}
+  .row .neg{color:var(--red);font-weight:600}
+  .row.total{border-bottom:0;padding-top:16px;font-size:20px;font-weight:800}
+  .row.total span:first-child{color:var(--text)}
+  .row .pos{color:var(--green)}
+  .ticket small{display:block;margin-top:14px;color:var(--muted);font-size:12px}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero{padding:48px 0 64px}}
+
+  /* Quién soy */
+  .about{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start}
+  .photo{aspect-ratio:4/5;border-radius:var(--radius);background:var(--bg-2);border:1px solid var(--line);overflow:hidden}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .about h2{font-size:clamp(28px,4.4vw,40px)}
+  .start{margin-top:28px;border:1px solid var(--gold);border-radius:var(--radius);padding:22px 24px}
+  .start h3{color:var(--gold);margin-bottom:6px}
+  .start p{font-size:16px}
+  .about p+p{margin-top:16px}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+  .fact{border:1px solid var(--line);border-radius:12px;padding:16px}
+  .fact b{display:block;font-size:26px;font-weight:900;color:var(--text);letter-spacing:-.02em}
+  .fact span{font-size:13px;color:var(--muted)}
+  @media (max-width:860px){.about{grid-template-columns:1fr;gap:32px}.photo{max-width:320px}}
+  @media (max-width:480px){.facts{grid-template-columns:1fr}}
+
+  /* Servicios */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+  .card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px;position:relative}
+  .card .num{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:14px}
+  .card p{font-size:16px}
+  .card .tag{display:inline-block;margin-top:16px;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag.save{color:var(--green);background:rgba(52,199,125,.1)}
+  .tag.loss{color:var(--red);background:rgba(235,77,75,.1)}
+  .note{margin-top:28px;font-size:15px}
+  @media (max-width:760px){.cards{grid-template-columns:1fr}}
+
+  /* Consejos */
+  .tips{display:flex;justify-content:space-between;align-items:center;gap:32px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:40px}
+  .tips h2{margin-bottom:10px}
+  @media (max-width:760px){.tips{flex-direction:column;align-items:flex-start;padding:28px}}
+
+  /* Contacto */
+  .contact{display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
+  .contact .side p{margin-bottom:24px}
+  form{display:grid;gap:16px}
+  label{font-size:14px;font-weight:600;display:block;margin-bottom:6px}
+  input,textarea,select{width:100%;font:inherit;font-size:16px;color:var(--text);background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+  input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transparent}
+  textarea{min-height:130px;resize:vertical}
+  .check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);font-weight:400}
+  .check input{width:18px;height:18px;margin-top:3px;flex:none;accent-color:var(--gold)}
+  .hp{position:absolute;left:-9999px}
+  .msg{font-size:15px;min-height:1em}
+  .msg.ok{color:var(--green)} .msg.err{color:var(--red)}
+  @media (max-width:860px){.contact{grid-template-columns:1fr;gap:36px}}
+
+  /* Pie */
+  footer{border-top:1px solid var(--line);padding:40px 0 48px;font-size:14px;color:var(--muted)}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+  .foot nav{display:flex;flex-wrap:wrap;gap:20px}
+  .foot a{color:var(--muted);text-decoration:none}
+  .foot a:hover{color:var(--text)}
+  .disclaimer{margin-top:20px;font-size:12px;max-width:60em}
+
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Vender sin Humo<span>.</span></a>
+    <ul>
+      <li><a href="#quien-soy">Quién soy</a></li>
+      <li><a href="#ayuda">En qué te ayudo</a></li>
+      <li><a href="#consejos">Consejos</a></li>
+      <li><a href="#contacto" class="btn btn-gold">Escríbeme</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- PORTADA -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Saskia Moreno · Vendedora con marca propia</p>
+        <h1>Vende en Amazon con números reales<span class="dot">.</span> Sin humo<span class="dot">.</span></h1>
+        <p class="lead">Vendo mis propias marcas en Amazon.es. Aquí comparto lo que funciona y lo que cuesta dinero: tarifas, publicidad, márgenes y proveedores. <strong>Con cifras, no con promesas.</strong></p>
+        <div class="actions">
+          <a href="#contacto" class="btn btn-gold">Escríbeme</a>
+          <a href="#ayuda" class="btn btn-ghost">En qué te ayudo</a>
+        </div>
+      </div>
+      <div class="ticket" aria-label="Ejemplo de desglose de margen de un producto">
+        <div class="t-head"><span>Desglose</span><span>por unidad</span></div>
+        <div class="row"><span>Precio de venta (sin IVA)</span><span>20,66 €</span></div>
+        <div class="row"><span>Comisión por venta</span><span class="neg">−3,10 €</span></div>
+        <div class="row"><span>Tarifa logística</span><span class="neg">−3,85 €</span></div>
+        <div class="row"><span>Publicidad (PPC)</span><span class="neg">−2,40 €</span></div>
+        <div class="row"><span>Producto + envío al almacén</span><span class="neg">−6,20 €</span></div>
+        <div class="row total"><span>Te queda</span><span class="pos">5,11 €</span></div>
+        <small>Ejemplo ilustrativo. Cada producto es distinto: por eso hay que hacer las cuentas.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉN SOY -->
+  <section id="quien-soy">
+    <div class="wrap about">
+      <div class="photo">
+        <img src="saskia.webp" alt="Saskia Moreno" width="1254" height="1254" loading="lazy">
+      </div>
+      <div>
+        <p class="eyebrow">Quién soy</p>
+        <h2>Me acuerdo del principio. Por eso sé lo que necesitas.</h2>
+        <p>Soy <strong>Saskia Moreno</strong>. Quería cumplir un sueño y para eso necesitaba un trabajo en remoto. Probé varios negocios y me quedé con Amazon FBA. Hoy llevo <strong>2 años</strong> vendiendo en Amazon.es con <strong>2 marcas propias</strong> de <strong>salud y cuidado personal</strong> y de <strong>regalos y ocio</strong>, que también gestiono fuera de la plataforma.</p>
+        <p>Cuando quise empezar vi mucho humo: cursos caros, clases "gratuitas" que terminaban en una venta y, después, te dejaban solo. Cuando empiezas dudas mucho, y eso se aprovecha. Lo que hace falta de verdad es <strong>acompañamiento</strong>.</p>
+        <p>Muchos de los que venden cursos llevan más de 8 años en esto y ya no recuerdan cómo fue empezar. Yo sí. Y el negocio ya no es como antes: <strong>las reglas han cambiado con la IA</strong> y el contenido de hace 8 años sirve de poco.</p>
+        <p>Amazon no es como te lo pintan. Es un negocio serio que, bien llevado, da grandes frutos. <strong>No vendo cursos y no me callo nada:</strong> en Instagram comparto gratis los trucos y consejos que muchos se guardan para ellos.</p>
+        <div class="facts">
+          <div class="fact"><b>2</b><span>años vendiendo</span></div>
+          <div class="fact"><b>2</b><span>marcas propias</span></div>
+          <div class="fact"><b>0 €</b><span>en cursos que vender</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN QUÉ TE AYUDO -->
+  <section id="ayuda">
+    <div class="wrap">
+      <p class="eyebrow">En qué te ayudo</p>
+      <h2>Donde se gana o se pierde el margen.</h2>
+      <p>Cuatro áreas que reviso primero en cualquier cuenta.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="num">01</div>
+          <h3>Tarifas y packaging</h3>
+          <p>Un centímetro de más en la caja puede subirte de tramo de tarifa. Revisamos medidas, peso y embalaje para que no pagues por aire.</p>
+          <span class="tag save">Ahorro por unidad</span>
+        </article>
+        <article class="card">
+          <div class="num">02</div>
+          <h3>Publicidad (PPC)</h3>
+          <p>Campañas que se pagan solas o que se comen el beneficio. Ordenamos estructura, pujas y palabras clave mirando el coste real por venta.</p>
+          <span class="tag loss">Menos gasto sin retorno</span>
+        </article>
+        <article class="card">
+          <div class="num">03</div>
+          <h3>Márgenes</h3>
+          <p>Cuánto te queda de verdad después de comisiones, logística, publicidad, devoluciones e IVA. Una hoja clara, producto a producto.</p>
+          <span class="tag save">Saber qué producto gana</span>
+        </article>
+        <article class="card">
+          <div class="num">04</div>
+          <h3>Proveedores</h3>
+          <p>Cómo pedir presupuestos, comparar, negociar cantidades y evitar sorpresas de calidad o de plazos.</p>
+          <span class="tag save">Mejor coste de producto</span>
+        </article>
+      </div>
+      <div class="start">
+        <h3>¿Empiezas de cero?</h3>
+        <p>Si me escribes y todavía no vendes, tenemos una <strong>llamada de 30 minutos</strong> para ver juntas si este negocio es para ti. Sin cursos que venderte al final.</p>
+      </div>
+      <p class="note">Próximamente: asesorías con acompañamiento. Si te interesa, <a href="#contacto" class="gold">escríbeme</a> y te aviso la primera.</p>
+    </div>
+  </section>
+
+  <!-- CONSEJOS -->
+  <section id="consejos">
+    <div class="wrap">
+      <div class="tips">
+        <div>
+          <p class="eyebrow">Consejos</p>
+          <h2>Consejos cortos, cada semana.</h2>
+          <p>En Instagram comparto números, errores y trucos que aplico en mis marcas.</p>
+        </div>
+        <a href="https://www.instagram.com/[tu_usuario]/" class="btn btn-gold" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          Sígueme en Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="wrap contact">
+      <div class="side">
+        <p class="eyebrow">Contacto</p>
+        <h2>Cuéntame qué vendes.</h2>
+        <p>Escríbeme por WhatsApp o déjame un mensaje con el formulario. Te respondo en <strong>menos de 12 horas</strong>. Si empiezas de cero, lo primero será una llamada de 30 minutos.</p>
+        <a class="btn btn-wa" href="https://wa.me/34642443197?text=Hola%20Saskia%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+          Escríbeme por WhatsApp
+        </a>
+      </div>
+
+      <!-- El formulario se envía a Formspree (gratis). Sustituye [TU_ID_FORMSPREE] por tu código. -->
+      <form id="form" action="https://formspree.io/f/[TU_ID_FORMSPREE]" method="POST" novalidate>
+        <div><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="name" required></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div>
+          <label for="tema">¿Sobre qué quieres hablar?</label>
+          <select id="tema" name="tema">
+            <option>Tarifas y packaging</option>
+            <option>Publicidad (PPC)</option>
+            <option>Márgenes</option>
+            <option>Proveedores</option>
+            <option>Empiezo de cero (llamada de 30 min)</option>
+            <option>Asesorías (avísame)</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" required placeholder="Qué vendes, desde cuándo y qué te preocupa ahora mismo."></textarea></div>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check"><input type="checkbox" name="acepto_privacidad" required><span>He leído y acepto la <a href="legal.html#privacidad" class="gold">política de privacidad</a>.</span></label>
+        <button class="btn btn-gold" type="submit">Enviar mensaje</button>
+        <p class="msg" id="msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span>© <span id="year">2026</span> Saskia Moreno · Vender sin Humo</span>
+      <nav>
+        <a href="legal.html#aviso-legal">Aviso legal</a>
+        <a href="legal.html#privacidad">Privacidad</a>
+        <a href="legal.html#cookies">Cookies</a>
+      </nav>
+    </div>
+    <p class="disclaimer">Web independiente. No está afiliada, patrocinada ni respaldada por Amazon. Amazon es una marca registrada de sus respectivos titulares. Los ejemplos numéricos son ilustrativos.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var form = document.getElementById('form');
+  var msg = document.getElementById('msg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.className = 'msg';
+    if (!form.checkValidity()) {
+      msg.textContent = 'Revisa que has rellenado todos los campos y aceptado la privacidad.';
+      msg.classList.add('err');
+      return;
+    }
+    if (form.action.indexOf('[') !== -1 || form.action.indexOf('%5B') !== -1) {
+      msg.textContent = 'El formulario todavía no está conectado (falta el código de Formspree).';
+      msg.classList.add('err');
+      return;
+    }
+    msg.textContent = 'Enviando...';
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        if (r.ok) { form.reset(); msg.textContent = 'Gracias. Te respondo pronto.'; msg.classList.add('ok'); }
+        else { throw new Error(); }
+      })
+      .catch(function () { msg.textContent = 'No se ha podido enviar. Prueba por WhatsApp.'; msg.classList.add('err'); });
+  });
+</script>
+</body>
+</html>
